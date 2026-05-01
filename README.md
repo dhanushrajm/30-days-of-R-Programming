@@ -1,8 +1,8 @@
 # 30 Days of R Programming 🚀📊
 
-Welcome to my **30 Days of R Programming** journey! This repository documents my daily progress as I master R—from the absolute basics to advanced data visualization and statistical modeling. 
+Welcome to my **30 Days of R Programming** journey! This repository documents my daily progress as I master R, from the absolute basics to advanced data visualization and statistical modeling. 
 
-This challenge is a personal commitment to building robust data science and analytics skills, complementing my studies at the Athens University of Economics and Business (AUEB). By the end of these 30 days, I will be proficient in handling complex datasets, creating publication-ready visualizations, and applying statistical models.
+This challenge is a personal commitment to building robust data science and analytics skills. By the end of these 30 days, I will be proficient in handling complex datasets, creating publication-ready visualizations, and applying statistical models.
 
 ## 🛠️ Environment & Tools
 - **Language:** R (v4.5+)
@@ -10,7 +10,8 @@ This challenge is a personal commitment to building robust data science and anal
 - **Core Libraries:** `tidyverse` (`dplyr`, `ggplot2`, `tidyr`, `readr`), `lubridate`, `stringr`, `Shiny`
 
 ## 📂 Repository Structure
-Each day's progress is documented in its respective file/folder. Here is the roadmap I am following:
+Each day's progress is documented in its respective file/folder. 
+Here is the roadmap that I will be following:
 
 ### Phase 1: The Foundation (Days 1-7)
 *Focus: R syntax, data structures, and core programming logic.*
@@ -55,12 +56,11 @@ Each day's progress is documented in its respective file/folder. Here is the roa
 - [ ] **Day 30:** Final Project: Comprehensive Kaggle/RStudio Notebook
 
 ## 💡 How to Use This Repository
-If you are learning R, feel free to explore my daily scripts. I heavily comment my code to explain *why* a function is used, not just *what* it does. 
-
+If you are learning R, feel free to explore my daily scripts. 
 To run these scripts locally:
-1. Clone this repository: `git clone https://github.com/YourUsername/30-Days-of-R-Programming.git`
+1. Clone this repository: `git clone https://github.com/dhanushrajm/30-Days-of-R-Programming.git`
 2. Open the project in RStudio.
-3. Ensure you have the `tidyverse` installed: `install.packages("tidyverse")`
+3. Ensure you have the `tidyverse` installed using the command: `install.packages("tidyverse")`
 
 ---
 *Consistency is key in programming. Let's code!* 💻📈
