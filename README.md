@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=30%20Days%20of%20R&fontSize=60&animation=fadeIn&fontAlignY=38" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=30%20Days%20of%20R%20Programming&fontSize=60&animation=fadeIn&fontAlignY=38" width="100%" />
 
 # 🚀 30 Days of R Programming Challenge
 
@@ -16,7 +16,7 @@
 ---
 
 ## 🎯 The Mission
-This repository is my daily lab notebook. As a student at the Athens University of Economics and Business (AUEB), I am committing to 30 continuous days of writing, breaking, and mastering R code. 
+This repository is my daily lab notebook. I am committing to 30 continuous days of writing, breaking, and mastering R code. 
 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
@@ -97,4 +97,4 @@ To run these scripts locally:
 3. Ensure you have the `tidyverse` installed using the command: `install.packages("tidyverse")`
 
 ---
-*Consistency is key in programming. Let's code!* 💻📈
+*Consistency is the key in programming. Let's code!* 💻📈
