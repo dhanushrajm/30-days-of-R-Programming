@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 2 / 30  
-> 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(6%)**
+> **Current Status:** Day 3 / 30  
+> 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(9%)**
 
 ---
 
@@ -36,7 +36,7 @@ Focus: R syntax, data structures, and core programming logic.
 
 - [x] **Day 1:** Environment Setup (RStudio & Kaggle) & Basic Syntax
 - [x] **Day 2:** Data Types & Variables
-- [ ] **Day 3:** Data Structures I (Vectors & Matrices)
+- [x] **Day 3:** Data Structures I (Vectors & Matrices)
 - [ ] **Day 4:** Data Structures II (Lists & Data Frames)
 - [ ] **Day 5:** Logical Operators & Conditional Statements
 - [ ] **Day 6:** Loops & Vectorized Operations
