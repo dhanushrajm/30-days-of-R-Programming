@@ -22,7 +22,7 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 
 ### 📊 Progress Tracker
 > **Current Status:** Day 3 / 30  
-> 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(9%)**
+> 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(12%)**
 
 ---
 
@@ -37,7 +37,7 @@ Focus: R syntax, data structures, and core programming logic.
 - [x] **Day 1:** Environment Setup (RStudio & Kaggle) & Basic Syntax
 - [x] **Day 2:** Data Types & Variables
 - [x] **Day 3:** Data Structures I (Vectors & Matrices)
-- [ ] **Day 4:** Data Structures II (Lists & Data Frames)
+- [x] **Day 4:** Data Structures II (Lists & Data Frames)
 - [ ] **Day 5:** Logical Operators & Conditional Statements
 - [ ] **Day 6:** Loops & Vectorized Operations
 - [ ] **Day 7:** Writing Custom Functions & Scope
