@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 6 / 30  
-> 🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(18%)**
+> **Current Status:** Day 7 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(21%)**
 
 ---
 
@@ -40,7 +40,7 @@ Focus: R syntax, data structures, and core programming logic.
 - [x] **Day 4:** Data Structures II (Lists & Data Frames)
 - [x] **Day 5:** Logical Operators & Conditional Statements
 - [x] **Day 6:** Loops & Vectorized Operations
-- [ ] **Day 7:** Writing Custom Functions & Scope
+- [x] **Day 7:** Writing Custom Functions & Scope
 </details>
 
 <details>
