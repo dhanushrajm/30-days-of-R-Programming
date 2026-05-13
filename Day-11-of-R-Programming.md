@@ -2,7 +2,7 @@ Day 11 of R Programming
 ================
 2026-05-11
 
-Today I learn how to collapse massive datasets into clean summary tables
+Today, I am learning how to collapse massive datasets into clean summary tables
 using `summarize()` and `group_by()`.
 
 ``` r
