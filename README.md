@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 12 / 30  
-> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(36%)**
+> **Current Status:** Day 13 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(39%)**
 
 ---
 
@@ -53,7 +53,7 @@ Focus: Cleaning, reshaping, and preparing real-world data.
 - [x] **Day 10:** Mutating & Arranging Data
 - [x] **Day 11:** Grouping & Summarizing Data
 - [x] **Day 12:** Data Cleaning (Handling NAs)
-- [ ] **Day 13:** Joining Datasets (Left, Right, Inner)
+- [x] **Day 13:** Joining Datasets (Left, Right, Inner)
 - [ ] **Day 14:** Reshaping Data (Pivoting with `tidyr`)
 - [ ] **Day 15:** Working with Strings (`stringr`) & Dates (`lubridate`)
 </details>
