@@ -21,13 +21,12 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 15 / 30  
-> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(50%)**
+> **Current Status:** Day 16 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(54%)**
 
 ---
 
-## 📂 The Roadmap (Interactive Syllabus)
-*Click on any phase to expand the daily curriculum!*
+## 📂 The Roadmap
 
 <details>
 <summary><b>🟢 Phase 1: The Foundation (Days 1-7)</b></summary>
@@ -63,7 +62,7 @@ Focus: Cleaning, reshaping, and preparing real-world data.
 <br>
 Focus: Building intuitive and beautiful graphics.
 
-- [ ] **Day 16:** The Grammar of Graphics (`ggplot2`)
+- [x] **Day 16:** The Grammar of Graphics (`ggplot2`)
 - [ ] **Day 17:** Distribution Plots (Histograms, Density)
 - [ ] **Day 18:** Categorical Plots (Bar charts, Boxplots)
 - [ ] **Day 19:** Relationship Plots (Scatter, Smoothing)
