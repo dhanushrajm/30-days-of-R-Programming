@@ -1,0 +1,84 @@
+---
+title: "Day 17 of R Programming"
+output: github_document
+date: "2026-05-17"
+---
+
+Today, I am learning about how to visualize statistical distributions using `ggplot2`.
+
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+## 1. Our Practice Dataset
+Let's build a mock dataset of 500 Kata tournament scores from athletes practicing two different styles. 
+
+```{r create_data}
+# We use set.seed() so the random numbers generate the same way every time we Knit!
+set.seed(42) 
+
+kata_data <- tibble(
+  athlete_id = 1:500,
+  style = sample(c("Shotokan", "Shito-ryu"), 500, replace = TRUE),
+  # Generating random scores around an 8.0 average
+  score = round(rnorm(500, mean = 8.0, sd = 0.5), 1) 
+)
+
+head(kata_data)
+```
+
+## 2. Histograms (`geom_histogram`)
+A histogram takes a single continuous variable (like `score`) and drops it into "bins" to show how frequently certain numbers appear. It only requires an `x` aesthetic!
+
+```{r histogram}
+ggplot(kata_data, aes(x = score)) +
+  # We define 'binwidth' to determine how wide each bucket of scores is
+  geom_histogram(binwidth = 0.1, fill = "steelblue", color = "black") +
+  labs(
+    title = "Distribution of Kata Scores",
+    x = "Final Score",
+    y = "Number of Athletes"
+  ) +
+  theme_minimal()
+```
+
+## 3. Density Plots (`geom_density`)
+
+```{r density_plot}
+ggplot(kata_data, aes(x = score, fill = style)) +
+  geom_density(alpha = 0.5) + 
+  labs(
+    title = "Score Density by Karate Style",
+    x = "Score",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## 4. Boxplots (`geom_boxplot`)
+
+```{r boxplot}
+ggplot(kata_data, aes(x = style, y = score, fill = style)) +
+  geom_boxplot() +
+  labs(
+    title = "Score Variation and Outliers",
+    subtitle = "Comparing scoring consistency between styles",
+    x = "Kata Style",
+    y = "Final Score"
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") 
+```
+
+## 5. Layering Geometries: Violin Plots
+A `geom_violin` is basically a mirrored density plot.
+
+```{r violin_plot}
+ggplot(kata_data, aes(x = style, y = score, fill = style)) +
+  geom_violin(alpha = 0.4) +
+  geom_boxplot(width = 0.1, fill = "white", color = "black") + 
+  labs(title = "Violin Plot with Embedded Boxplot") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
