@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 21 / 30  
-> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ **(70%)**
+> **Current Status:** Day 22 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ **(74%)**
 
 ---
 
@@ -68,7 +68,7 @@ Focus: Building intuitive and beautiful graphics.
 - [x] **Day 19:** Relationship Plots (Scatter, Smoothing)
 - [x] **Day 20:** Advanced `ggplot2` (Faceting, Themes)
 - [x] **Day 21:** Interactive Visuals (`plotly`)
-- [ ] **Day 22:** Geospatial Mapping (`sf` & `leaflet`)
+- [x] **Day 22:** Geospatial Mapping (`sf` & `leaflet`)
 </details>
 
 <details>
