@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 23 / 30  
-> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ **(78%)**
+> **Current Status:** Day 24 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ **(82%)**
 
 ---
 
@@ -77,7 +77,7 @@ Focus: Building intuitive and beautiful graphics.
 Focus: Extracting insights, building models, and deploying work.
 
 - [x] **Day 23:** Exploratory Data Analysis (EDA) Workflow
-- [ ] **Day 24:** Probability Distributions & Hypothesis Testing
+- [x] **Day 24:** Probability Distributions & Hypothesis Testing
 - [ ] **Day 25:** Linear Regression Modeling
 - [ ] **Day 26:** Logistic Regression & Classification
 - [ ] **Day 27:** Iteration with `purrr` 
