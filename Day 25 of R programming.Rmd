@@ -1,0 +1,108 @@
+---
+title: "Day 25 of R Programming"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+date: "2026-05-25"
+---
+
+Today, I learn how to make a dashboard using 'flexdashboard' package.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(flexdashboard)
+library(plotly)
+library(sf)
+library(knitr)
+```
+
+## 1. Simulating live satellite thermal anomaly data of last 12 hours
+
+```{r}
+set.seed(42)
+
+fire_data <- tibble(
+  time = seq(Sys.time() - 43200, Sys.time(), by = "hour"),
+  avg_temp_c = runif(13, 30, 42),
+  fwi_index = runif(13, 20, 50),
+  active_alerts = sample(0:3, 13, replace = TRUE)
+)
+
+head(fire_data)
+```
+
+## 2. Extracting top current metrics:
+
+```{r}
+current_temp <- round(last(fire_data$avg_temp_c), 1)
+current_temp
+
+current_fwi <- round(last(fire_data$fwi_index), 1)
+current_fwi
+
+total_alerts <- sum(fire_data$active_alerts)
+total_alerts
+```
+
+Row
+-------------------------------------
+## 3. Current Regional temp (°C)
+
+```{r}
+gauge(current_temp, min = 20, max = 50, symbol = '°', 
+      gaugeSectors(
+        success = c(20, 32), 
+        warning = c(33, 38), 
+        danger = c(39, 50)
+      ))
+```
+
+## 4. Fire Weather Index (FWI)
+
+```{r}
+gauge(current_fwi, min = 0, max = 100, 
+      gaugeSectors(
+        success = c(0, 25), 
+        warning = c(26, 45), 
+        danger = c(46, 100)
+      ))
+```
+
+## 5. Active thermal anomalies (Last 12 Hours)
+
+```{r}
+valueBox(total_alerts, icon = "fa-fire", 
+         color = ifelse(total_alerts > 5, "danger", "warning"))
+```
+Row
+-------------------------------------
+
+## 6. Temperature and FWI Trend
+
+```{r}
+plot <- ggplot(fire_data, aes(x = time)) +
+  geom_line(aes(y = avg_temp_c, color = "Temperature (°C)"), linewidth = 1) +
+  geom_line(aes(y = fwi_index, color = "FWI"), linewidth = 1, linetype = "dashed") +
+  scale_color_manual(values = c("Temperature (°C)" = "darkred", "FWI" = "darkorange")) +
+  labs(x = "Time", y = "Value", color = "Metric") +
+  theme_minimal()
+
+ggplotly(plot)
+```
+
+## 7. Detection Log
+
+```{r}
+recent_log <- fire_data %>% 
+  arrange(desc(time)) %>% 
+  select(Time = time, `Temp (°C)` = avg_temp_c, FWI = fwi_index, Alerts = active_alerts) %>% 
+  mutate(
+    `Temp (°C)` = round(`Temp (°C)`, 1),
+    FWI = round(FWI, 1)
+  )
+
+kable(recent_log)
+```
+
+
