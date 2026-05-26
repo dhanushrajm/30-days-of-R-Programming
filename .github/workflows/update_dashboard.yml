@@ -1,17 +1,17 @@
 name: Auto-Update Dashboard
 
-# 1. When should this script run?
 on:
   schedule:
-    - cron: "0 * * * *" 
-  workflow_dispatch:
+    - cron: "0 * * * *"
+  workflow_dispatch:    
 
 jobs:
   update-data:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  
     
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -20,6 +20,9 @@ jobs:
 
       - name: Setup Pandoc
         uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Install System Dependencies for sf
+        run: sudo apt-get update && sudo apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
 
       - name: Install R Packages
         run: |
