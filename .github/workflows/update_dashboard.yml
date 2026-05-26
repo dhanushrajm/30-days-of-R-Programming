@@ -28,7 +28,7 @@ jobs:
 
       - name: Render Dashboard
         run: |
-          rmarkdown::render("Day-25-of-R-programming.md", output_file = "index.html")
+          rmarkdown::render("Day-25-of-R-programming.Rmd", output_file = "index.html")
         shell: Rscript {0}
 
       - name: Commit and Push Changes
