@@ -1,0 +1,129 @@
+---
+title: "Greek Power Grid Load Forecasting & Spatial Analysis"
+author: "Dhanushraj Murugan"
+date: "2026-05-29"
+output: html_document
+---
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels)
+library(leaflet)
+library(lubridate)
+```
+
+## 1. Spatial mapping
+
+```{r}
+substations <- tibble(
+  region = c("Attica", "Central Macedonia", "Crete", "Thessaly", "Peloponnese"),
+  lat = c(37.9838, 40.6401, 35.2401, 39.6390, 37.5715),
+  lon = c(23.7275, 22.9444, 24.8093, 22.4191, 22.3727),
+  base_capacity_mw = c(1200, 800, 300, 400, 350)
+)
+```
+
+## 2. Interactive map using leaflet
+
+```{r}
+leaflet(substations) %>% 
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+  addCircleMarkers(
+    lng = ~lon, lat = ~lat,
+    popup = ~paste("<b>Region:</b>", region, "<br><b>Capacity:</b>", base_capacity_mw, "MW"),
+    radius = ~base_capacity_mw / 100,
+    color = "darkorange",
+    fillOpacity = 0.7
+  )
+```
+
+## 3. Data Engineering & EDA
+
+```{r}
+set.seed(42)
+dates <- seq(ymd("2025-01-01"), ymd("2025-12-31"), by = "day")
+
+load_data <- expand_grid(date = dates, region = substations$region) |>
+  left_join(substations, by = "region") |>
+  mutate(
+    month = month(date),
+    is_weekend = ifelse(wday(date) %in% c(1, 7), 1, 0),
+    
+    temp_c = 15 + 12 * sin(pi * (month - 4) / 6) + rnorm(n(), 0, 3),
+    
+    temp_effect = ifelse(temp_c > 25, (temp_c - 25) * 15, 
+                  ifelse(temp_c < 10, (10 - temp_c) * 10, 0)),
+    
+    actual_load_mw = base_capacity_mw * 0.6 + temp_effect - (is_weekend * 50) + rnorm(n(), 0, 20)
+  )
+```
+
+## For Attica and Crete Region
+
+```{r}
+load_data |> 
+  filter(region == "Attica") |> 
+  ggplot(aes(x = date, y = actual_load_mw)) +
+  geom_line(color = "steelblue") +
+  geom_smooth(method = "loess", color = "darkred", se = FALSE) +
+  labs(title = "Attica Region: Daily Energy Load Profile", x = "Date", y = "Load (MW)") +
+  theme_minimal()
+
+load_data |> 
+  filter(region == "Crete") |> 
+  ggplot(aes(x = date, y = actual_load_mw)) +
+  geom_line(color = "steelblue") +
+  geom_smooth(method = "loess", color = "darkred", se = FALSE) +
+  labs(title = "Crete Region: Daily Energy Load Profile", x = "Date", y = "Load (MW)") +
+  theme_minimal()
+```
+
+## 4. Predictive modeling with 'tidymodels'
+
+```{r}
+# Step 1: Dataset split
+data_split <- initial_split(load_data, prop = 0.80)
+train_data <- training(data_split)
+test_data  <- testing(data_split)
+
+# Step 2: Preprocessing
+preprocessed <- recipe(actual_load_mw ~ temp_c + month + is_weekend + base_capacity_mw, data = train_data) %>% 
+  step_normalize(all_numeric_predictors())
+
+# Step 3: Model Specification
+linear_spec <- linear_reg() %>% 
+  set_engine("lm")
+
+# Step 4: The Workflow
+load_workflow <- workflow() %>% 
+  add_recipe(preprocessed) %>% 
+  add_model(linear_spec)
+
+# Step 5: Train the model
+trained_model <- load_workflow %>% 
+  fit(data = train_data)
+
+tidy(trained_model)
+```
+
+## 5. Evaluation on unseen data
+
+```{r}
+test_results <- test_data %>% 
+  bind_cols(predict(trained_model, new_data = test_data))
+
+# RMSE and R-Squared
+metrics <- metric_set(rmse, rsq)
+metrics(test_results, truth = actual_load_mw, estimate = .pred)
+
+# Plot Actual vs. Predicted values
+ggplot(test_results, aes(x = actual_load_mw, y = .pred)) +
+  geom_point(alpha = 0.5, color = "darkblue") +
+  geom_abline(lty = 2, color = "red", linewidth = 1) +
+  labs(title = "Model Accuracy: Actual vs Predicted Load", x = "Actual Load (MW)", y = "Predicted Load (MW)") +
+  theme_minimal()
+```
+
+
+
+
