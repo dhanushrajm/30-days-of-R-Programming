@@ -21,8 +21,8 @@ This repository is my daily lab notebook. I am committing to 30 continuous days 
 **Goal:** Build a robust toolkit for handling complex datasets, creating publication-ready visualizations, and deploying statistical models.
 
 ### 📊 Progress Tracker
-> **Current Status:** Day 29 / 30  
-> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ **(97%)**
+> **Current Status:** Day 30 / 30  
+> 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 **(100%)**
 
 ---
 
@@ -83,11 +83,14 @@ Focus: Extracting insights, building models, and deploying work.
 - [x] **Day 27:** Iteration with `purrr` 
 - [x] **Day 28:** Building a basic Dashboard (`Shiny`)
 - [x] **Day 29:** Optimizing R Code (Benchmarking)
-- [ ] **Day 30:** Final Project: Comprehensive Kaggle/RStudio Notebook
+- [x] **Day 30:** Final Project: Comprehensive Kaggle/RStudio Notebook
 </details>
 
 ---
 
+I have completed the above roadmap successfully. It really helped me a lot to learn about R and all it's fundamentals and advanced concepts. If you want to follow the same, please feel free to use it via below instructions.
+
+---
 ## 💡 How to Use This Repository
 If you are learning R, feel free to explore my daily scripts. 
 To run these scripts locally:
